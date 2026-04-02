@@ -4,64 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PuckCooks | Feed Your Family</title>
+    <!-- Importing a rugged, high-impact font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --puck-orange: #ff4d00; /* Flame Orange */
+            --puck-black: #0a0a0a;
+            --puck-grey: #1a1a1a;
+        }
+
         body {
-            background-color: #0c0c0c;
+            background-color: var(--puck-black);
+            /* CSS Cast Iron Texture */
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 4px 4px;
             color: #ffffff;
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
         }
+
+        /* Dark overlay to make the texture subtle */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.95) 100%);
+            z-index: -1;
+        }
+
         .container {
-            max-width: 480px;
-            margin: auto;
-            padding: 40px 20px;
+            max-width: 420px;
+            width: 90%;
+            padding: 60px 20px;
         }
+
         .logo {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-            border: 2px solid #333;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 25px;
+            border: 3px solid #333;
             border-radius: 50%;
-            padding: 10px;
+            padding: 5px;
+            background: var(--puck-black);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        h1 { font-weight: 800; letter-spacing: -1px; margin-bottom: 5px; }
-        p { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+
+        h1 { 
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .tagline { 
+            color: var(--puck-orange);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 40px;
+            display: block;
+        }
         
         .btn {
             display: block;
-            background-color: #1a1a1a;
+            background-color: var(--puck-grey);
             color: #ffffff;
             text-decoration: none;
-            padding: 18px;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            font-weight: 600;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             border: 1px solid #333;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
         }
-        .btn:hover { background-color: #252525; border-color: #555; }
-        .btn-highlight { background-color: #ffffff; color: #000; border: none; }
-        .btn-highlight:hover { background-color: #e0e0e0; }
 
-        .footer { margin-top: 50px; opacity: 0.3; font-size: 0.7em; }
+        .btn:hover { 
+            background-color: #222;
+            border-color: var(--puck-orange);
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(255, 77, 0, 0.2);
+        }
+
+        /* The YouTube Primary Action */
+        .btn-highlight { 
+            background-color: #ffffff; 
+            color: #000; 
+            border: none;
+            animation: pulse-glow 2s infinite;
+        }
+        .btn-highlight:hover { background-color: var(--puck-orange); color: #fff; }
+
+        /* Merch Button Styling */
+        .btn-merch {
+            border: 1px dashed #555;
+            opacity: 0.8;
+            background: transparent;
+            font-size: 0.85rem;
+        }
+        .btn-merch:hover { opacity: 1; border-style: solid; }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        .footer { 
+            margin-top: 60px; 
+            opacity: 0.4; 
+            font-size: 0.65rem; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Optimized logo for fast loading -->
         <img src="logo-small.png" alt="PuckCooks" class="logo">
         <h1>PuckCooks</h1>
-        <p>Feeding Your Family. One Dish at a Time.</p>
+        <span class="tagline">Feed Your Family. One Dish at a Time.</span>
 
-        <a href="https://www.youtube.com/@PuckCooks" class="btn btn-highlight">THE FULL COOK: Step-by-Step Recipes (YouTube)</a>
+        <a href="https://www.youtube.com/@PuckCooks" class="btn btn-highlight">THE FULL COOK: Step-by-Step (YouTube)</a>
         <a href="https://www.instagram.com/puckcooks" class="btn">THE MARKET: Behind the Scenes (Instagram)</a>
         <a href="https://www.tiktok.com/@puckcooks" class="btn">THE QUICK HITS: Farm-to-Table (TikTok)</a>
+        
+        <!-- Merch Hype Button -->
+        <a href="#" class="btn btn-merch">MERCH: RUGGED GEAR (COMING SOON)</a>
+        
         <a href="mailto:puckcooks@gmail.com" class="btn">PARTNERSHIPS & INQUIRIES</a>
 
         <div class="footer">
-            &copy; 2026 PuckCooks. Feed Your Family.
+            &copy; 2026 PuckCooks. Built for the Kitchen.
         </div>
     </div>
 </body>
