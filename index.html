@@ -4,136 +4,238 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PuckCooks | Feed Your Family</title>
-    <!-- Rugged Hand-Painted and Strong Sans fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --puck-orange: #ff4d00; /* Flame Orange */
-            --puck-black: #080808;
-            --puck-iron: #1a1a1a;
+            --puck-orange: #ff4d00;
+            --puck-black: #050505;
+            --puck-iron: #121212;
+            --puck-white: #f0f0f0;
         }
 
         body {
             background-color: var(--puck-black);
-            /* Visible Cast Iron / Grit Texture using SVG filter technique */
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
             background-attachment: fixed;
-            color: #ffffff;
+            color: var(--puck-white);
             font-family: 'Oswald', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
-            min-height: 100vh;
         }
 
-        /* Darkening overlay to keep the grit subtle but present */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(180deg, rgba(8,8,8,0.7) 0%, rgba(8,8,8,0.9) 100%);
+            background: linear-gradient(180deg, rgba(5,5,5,0.8) 0%, rgba(5,5,5,0.95) 100%);
             z-index: -1;
         }
 
         .container {
-            max-width: 420px;
+            max-width: 440px;
             width: 90%;
-            padding: 60px 20px;
+            padding: 40px 0;
+        }
+
+        .header-section {
+            margin-bottom: 40px;
         }
 
         .logo {
-            width: 130px;
-            height: 130px;
-            margin-bottom: 25px;
-            border: 4px solid #222;
+            width: 140px;
+            height: 140px;
+            border: 5px solid #1a1a1a;
             border-radius: 50%;
             padding: 5px;
             background: #000;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
         }
 
         h1 { 
-            font-family: 'Permanent Marker', cursive;
+            font-family: 'New Rocker', cursive;
             font-size: 3.8rem;
             margin: 0;
             line-height: 1;
             color: #fff;
-            text-shadow: 3px 3px 0px var(--puck-orange);
-            transform: rotate(-2deg); /* Adding that hand-painted vibe */
+            letter-spacing: 2px;
+            /* Sharp steel highlight instead of orange shadow */
+            text-shadow: 2px 2px 0px #333, -1px -1px 0px #000;
         }
 
         .tagline { 
-            color: #aaa;
+            color: var(--puck-orange);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
+            letter-spacing: 4px;
+            font-size: 0.85rem;
             margin-top: 15px;
-            margin-bottom: 45px;
-            display: block;
         }
-        
+
+        /* Email Capture Section */
+        .email-capture {
+            background: var(--puck-iron);
+            padding: 30px 20px;
+            margin: 40px 0;
+            border: 1px solid #222;
+            border-left: 5px solid var(--puck-orange);
+            text-align: left;
+        }
+
+        .email-capture h3 {
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            color: #fff;
+        }
+
+        .email-capture p {
+            margin: 0 0 20px 0;
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .email-input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="email"] {
+            flex-grow: 1;
+            background: #000;
+            border: 1px solid #333;
+            padding: 12px;
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .email-submit {
+            background: var(--puck-orange);
+            color: #fff;
+            border: none;
+            padding: 0 20px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* Buttons Area */
+        .links-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
         .btn {
             display: block;
             background-color: var(--puck-iron);
             color: #ffffff;
             text-decoration: none;
             padding: 22px;
-            margin-bottom: 15px;
-            border-radius: 2px; /* Sharper corners for a rugged look */
+            border-radius: 0px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            border: 1px solid #333;
+            border: 1px solid #222;
             transition: all 0.2s ease;
             box-shadow: 4px 4px 0px #000;
         }
 
         .btn:hover { 
-            background-color: #252525;
+            background-color: #1a1a1a;
             border-color: var(--puck-orange);
             transform: translate(-2px, -2px);
             box-shadow: 6px 6px 0px var(--puck-orange);
         }
 
-        .btn-highlight { 
+        .btn-primary { 
             background-color: #fff; 
             color: #000; 
             border: none;
+            font-size: 1.2rem;
         }
-        .btn-highlight:hover { background-color: var(--puck-orange); color: #fff; }
 
-        .btn-merch {
-            border: 1px dashed #444;
-            background: rgba(255,255,255,0.02);
+        /* Merch Teaser Grid */
+        .merch-teaser {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+        }
+
+        .merch-teaser h4 {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #555;
+            margin-bottom: 20px;
             font-size: 0.8rem;
-            opacity: 0.7;
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .merch-item {
+            aspect-ratio: 1;
+            background: #000;
+            border: 1px solid #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            color: #333;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         .footer { 
-            margin-top: 60px; 
-            opacity: 0.3; 
+            margin: 60px 0; 
+            opacity: 0.2; 
             font-size: 0.7rem; 
             text-transform: uppercase;
-            font-family: sans-serif;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="logo-small.png" alt="PuckCooks" class="logo">
-        <h1>PuckCooks</h1>
-        <span class="tagline">Feed Your Family. One Dish at a Time.</span>
+        <div class="header-section">
+            <img src="logo-small.png" alt="PuckCooks" class="logo">
+            <h1>PuckCooks</h1>
+            <span class="tagline">Feed Your Family. One Dish at a Time.</span>
+        </div>
 
-        <a href="https://www.youtube.com/@PuckCooks" class="btn btn-highlight">THE FULL COOK (YouTube)</a>
-        <a href="https://www.instagram.com/puckcooks" class="btn">THE MARKET (Instagram)</a>
-        <a href="https://www.tiktok.com/@puckcooks" class="btn">THE QUICK HITS (TikTok)</a>
-        
-        <a href="#" class="btn btn-merch">MERCH: RUGGED GEAR (COMING SOON)</a>
-        
-        <a href="mailto:puckcooks@gmail.com" class="btn">PARTNERSHIPS & INQUIRIES</a>
+        <div class="links-section">
+            <a href="https://www.youtube.com/@PuckCooks" class="btn btn-primary">WATCH: STEP-BY-STEP RECIPES</a>
+            <a href="https://www.tiktok.com/@puckcooks" class="btn">TIKTOK: THE QUICK HITS</a>
+            <a href="https://www.instagram.com/puckcooks" class="btn">INSTAGRAM: BEHIND THE SCENES</a>
+        </div>
+
+        <!-- The "Value Trap" (Email Capture) -->
+        <div class="email-capture">
+            <h3>The $10 Grocery Blueprint</h3>
+            <p>Get the checklist Puck uses to feed a family of 5 for under $10. Drop your email below.</p>
+            <div class="email-input-group">
+                <input type="email" placeholder="YOUR EMAIL ADDRESS">
+                <button class="email-submit">JOIN</button>
+            </div>
+        </div>
+
+        <div class="merch-teaser">
+            <h4>RUGGED GEAR DROPPING SOON</h4>
+            <div class="merch-grid">
+                <div class="merch-item">CANVAS APRON</div>
+                <div class="merch-item">TRUCKER HAT</div>
+                <div class="merch-item">HEAVY HOODIE</div>
+            </div>
+        </div>
+
+        <a href="mailto:puckcooks@gmail.com" class="btn" style="margin-top: 40px; font-size: 0.8rem; opacity: 0.6;">PARTNERSHIPS & INQUIRIES</a>
 
         <div class="footer">
             &copy; 2026 PuckCooks. Built for the Kitchen.
