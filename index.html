@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PuckCooks | Feed Your Family</title>
-    <!-- Importing a rugged, high-impact font -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Rugged Hand-Painted and Strong Sans fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --puck-orange: #ff4d00; /* Flame Orange */
-            --puck-black: #0a0a0a;
-            --puck-grey: #1a1a1a;
+            --puck-black: #080808;
+            --puck-iron: #1a1a1a;
         }
 
         body {
             background-color: var(--puck-black);
-            /* CSS Cast Iron Texture */
-            background-image: 
-                radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
-            background-size: 4px 4px;
+            /* Visible Cast Iron / Grit Texture using SVG filter technique */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-attachment: fixed;
             color: #ffffff;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -29,12 +28,12 @@
             min-height: 100vh;
         }
 
-        /* Dark overlay to make the texture subtle */
+        /* Darkening overlay to keep the grit subtle but present */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(180deg, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.95) 100%);
+            background: linear-gradient(180deg, rgba(8,8,8,0.7) 0%, rgba(8,8,8,0.9) 100%);
             z-index: -1;
         }
 
@@ -45,89 +44,80 @@
         }
 
         .logo {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             margin-bottom: 25px;
-            border: 3px solid #333;
+            border: 4px solid #222;
             border-radius: 50%;
             padding: 5px;
-            background: var(--puck-black);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: #000;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
         }
 
         h1 { 
-            font-family: 'Bebas Neue', cursive;
-            font-size: 3.5rem;
-            letter-spacing: 2px;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3.8rem;
             margin: 0;
             line-height: 1;
-            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 3px 3px 0px var(--puck-orange);
+            transform: rotate(-2deg); /* Adding that hand-painted vibe */
         }
 
         .tagline { 
-            color: var(--puck-orange);
-            font-weight: 800;
+            color: #aaa;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-            margin-bottom: 40px;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            margin-bottom: 45px;
             display: block;
         }
         
         .btn {
             display: block;
-            background-color: var(--puck-grey);
+            background-color: var(--puck-iron);
             color: #ffffff;
             text-decoration: none;
-            padding: 20px;
+            padding: 22px;
             margin-bottom: 15px;
-            border-radius: 4px;
+            border-radius: 2px; /* Sharper corners for a rugged look */
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             border: 1px solid #333;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s ease;
+            box-shadow: 4px 4px 0px #000;
         }
 
         .btn:hover { 
-            background-color: #222;
+            background-color: #252525;
             border-color: var(--puck-orange);
-            transform: scale(1.02);
-            box-shadow: 0 5px 15px rgba(255, 77, 0, 0.2);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--puck-orange);
         }
 
-        /* The YouTube Primary Action */
         .btn-highlight { 
-            background-color: #ffffff; 
+            background-color: #fff; 
             color: #000; 
             border: none;
-            animation: pulse-glow 2s infinite;
         }
         .btn-highlight:hover { background-color: var(--puck-orange); color: #fff; }
 
-        /* Merch Button Styling */
         .btn-merch {
-            border: 1px dashed #555;
-            opacity: 0.8;
-            background: transparent;
-            font-size: 0.85rem;
-        }
-        .btn-merch:hover { opacity: 1; border-style: solid; }
-
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+            border: 1px dashed #444;
+            background: rgba(255,255,255,0.02);
+            font-size: 0.8rem;
+            opacity: 0.7;
         }
 
         .footer { 
             margin-top: 60px; 
-            opacity: 0.4; 
-            font-size: 0.65rem; 
-            letter-spacing: 1px;
+            opacity: 0.3; 
+            font-size: 0.7rem; 
             text-transform: uppercase;
+            font-family: sans-serif;
         }
     </style>
 </head>
@@ -137,11 +127,10 @@
         <h1>PuckCooks</h1>
         <span class="tagline">Feed Your Family. One Dish at a Time.</span>
 
-        <a href="https://www.youtube.com/@PuckCooks" class="btn btn-highlight">THE FULL COOK: Step-by-Step (YouTube)</a>
-        <a href="https://www.instagram.com/puckcooks" class="btn">THE MARKET: Behind the Scenes (Instagram)</a>
-        <a href="https://www.tiktok.com/@puckcooks" class="btn">THE QUICK HITS: Farm-to-Table (TikTok)</a>
+        <a href="https://www.youtube.com/@PuckCooks" class="btn btn-highlight">THE FULL COOK (YouTube)</a>
+        <a href="https://www.instagram.com/puckcooks" class="btn">THE MARKET (Instagram)</a>
+        <a href="https://www.tiktok.com/@puckcooks" class="btn">THE QUICK HITS (TikTok)</a>
         
-        <!-- Merch Hype Button -->
         <a href="#" class="btn btn-merch">MERCH: RUGGED GEAR (COMING SOON)</a>
         
         <a href="mailto:puckcooks@gmail.com" class="btn">PARTNERSHIPS & INQUIRIES</a>
