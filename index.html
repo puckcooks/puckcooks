@@ -269,31 +269,34 @@
 
         .merch-item {
             aspect-ratio: 1;
-            background: linear-gradient(145deg, #151515, #0a0a0a);
+            background-color: #111;
+            background-size: cover;
+            background-position: center;
             border: 1px solid #222;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
-            font-size: 0.7rem;
-            color: #888;
+            font-size: 0.65rem;
+            color: #fff;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 1px;
-            padding: 10px;
+            padding: 12px;
             line-height: 1.2;
-            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5), 
-                        inset -1px -1px 2px rgba(255,255,255,0.05);
+            box-shadow: inset 0 -30px 30px rgba(0,0,0,0.9),
+                        inset 2px 2px 5px rgba(0,0,0,0.5);
             transition: all 0.3s ease;
             position: relative;
             text-decoration: none;
+            text-align: center;
         }
 
         .merch-item:hover {
             color: var(--puck-orange);
             border-color: var(--puck-orange);
-            background: #111;
-            box-shadow: 0 0 15px rgba(255, 77, 0, 0.3);
             transform: translateY(-5px);
+            box-shadow: inset 0 -30px 30px rgba(255, 77, 0, 0.2),
+                        0 10px 20px rgba(0,0,0,0.5);
         }
 
         /* Subtle "stamped" look for the text */
@@ -301,7 +304,7 @@
             content: "";
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 77, 0, 0.05) 0%, transparent 70%);
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%);
             pointer-events: none;
         }
 
@@ -330,9 +333,9 @@
         <div class="merch-teaser">
             <h4>RUGGED GEAR</h4>
             <div class="merch-grid">
-                <a href="https://puck-aew-shop.fourthwall.com/products/flaming-hot-chefs-delight-apron" class="merch-item" target="_blank">CANVAS APRON</a>
-                <a href="https://puck-aew-shop.fourthwall.com/products/flaming-hot-puckcooks-trucker-hat" class="merch-item" target="_blank">TRUCKER HAT</a>
-                <a href="https://puck-aew-shop.fourthwall.com/products/pucks-flaming-fork-heavy-hoodie" class="merch-item" target="_blank">HEAVY HOODIE</a>
+                <a href="https://puck-aew-shop.fourthwall.com/products/flaming-hot-chefs-delight-apron" class="merch-item" target="_blank" style="background-image: url('https://imgproxy.fourthwall.com/8k5IH1_HEgiRI1uW3Q8kKO5zxUKNi1eBsQQibJAwYZM/w:1200/sm:1/enc/cM7GhgX8fBY4o_dP/2dnZRsH78JOj5weh/gUDzOPlhRJwi7lpD/JGbDjZ0ifDCk7Z65/GIbSDBs_zCeyx5-G/_j4B30pUTCoNRx2A/wo-CPdbWYJ8j7166/n6Z61Iu7ttjiDBC2/b_Q-v1sGSUZwRUK7/WWzHGZLBQLh9VJHg/bUUKtM7GxsqaBs_X/cWzEc08GYcW8e0m5/X85ORekVtzR9VjLk/z7Puvv3i043lSGqf/YjE7kk-O3dQ.png');">CANVAS APRON</a>
+                <a href="https://puck-aew-shop.fourthwall.com/products/flaming-hot-puckcooks-trucker-hat" class="merch-item" target="_blank" style="background-image: url('https://imgproxy.fourthwall.com/voZwwdJWDdoeeRkreDSiXlZNpRXtmoyXyZPeYwl9aEQ/w:1200/sm:1/enc/xW8zmbi3ziZ7wYvl/D9HRQ7bISTya_NK7/kV3-RF6wpijrMkt8/XTNEdwc65X8j-zrz/6kDRY97QQTsT_ccR/ONIFPd0wczPFugY_/njY-OrpYtMKz8ATx/XolKTidYdOLS-k5x/ugNYQ9Kq05tFOJNv/2mhUkzw9t3Ub-VfM/7XZABmTnKKmZXUNS/PXvkcwW7dHKLVgOa/YHfz_uyqW3IapV_x/1-fzik0e03HSCNo2/Sq0bPXe7nOw.png');">TRUCKER HAT</a>
+                <a href="https://puck-aew-shop.fourthwall.com/products/pucks-flaming-fork-heavy-hoodie" class="merch-item" target="_blank" style="background-image: url('https://imgproxy.fourthwall.com/9aDsBbdrl-f4m833ShkJ-dAMU1_MySwaoEQiyIeQfnY/w:1200/sm:1/enc/1-c1ER98F5a8iGkG/RnZ7QXlRQtVaTVQ7/OP4hx5yZ6T7dCobR/KOxAJqvapaEpBd-J/3qCVoVvWGpGRqChm/K79eXyxZeGk8wyZK/APBMr0X91nGyVMvV/itnudqP_5MuJZceq/pKbz_6Nj6JVz15zi/LB0c4lWGG3EQexYB/G8Om96yWcd-6xoxR/xdfjJc7XODHvUNgo/y25EeLxQBxkDUryl/wKm_KEne2KzNzH_x/PJHKYZ2xY8g.png');">HEAVY HOODIE</a>
             </div>
         </div>
 
